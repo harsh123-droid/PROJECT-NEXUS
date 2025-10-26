@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT DHARWAD NEXUS - Student Forum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg-1: rgba(59, 130, 246, 0.08);
+            --color-bg-2: rgba(245, 158, 11, 0.08);
+            --color-bg-3: rgba(34, 197, 94, 0.08);
+            --color-bg-4: rgba(239, 68, 68, 0.08);
+            --color-bg-5: rgba(147, 51, 234, 0.08);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-danger: rgba(239, 68, 68, 1);
+            --color-danger-bg: rgba(239, 68, 68, 0.1);
+            --color-danger-border: rgba(239, 68, 68, 0.3);
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 20px;
+            --font-size-3xl: 24px;
+            --space-4: 4px;
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        [data-theme="dark"] {
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400-rgb: 119, 124, 124;
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-danger: rgba(252, 165, 165, 1);
+            --color-danger-bg: rgba(239, 68, 68, 0.15);
+            --color-danger-border: rgba(239, 68, 68, 0.4);
+            --color-background: var(--color-charcoal-700);
+            --color-surface: var(--color-charcoal-800);
+            --color-text: var(--color-gray-200);
+            --color-text-secondary: rgba(167, 169, 169, 0.7);
+            --color-primary: var(--color-teal-300);
+            --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+            --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-charcoal-700: rgba(31, 33, 33, 1);
+                --color-charcoal-800: rgba(38, 40, 40, 1);
+                --color-gray-200: rgba(245, 245, 245, 1);
+                --color-gray-300: rgba(167, 169, 169, 1);
+                --color-gray-400-rgb: 119, 124, 124;
+                --color-teal-300: rgba(50, 184, 198, 1);
+                --color-danger: rgba(252, 165, 165, 1);
+                --color-danger-bg: rgba(239, 68, 68, 0.15);
+                --color-danger-border: rgba(239, 68, 68, 0.4);
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(var(--color-gray-300), 0.7);
+                --color-primary: var(--color-teal-300);
+                --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+            }
+        }
+
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-16);
+        }
+
+        nav {
+            background-color: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-16) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-24);
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: var(--font-size-base);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .btn {
+            padding: var(--space-8) var(--space-16);
+            border-radius: var(--radius-base);
+            border: none;
+            cursor: pointer;
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn--primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .btn--primary:hover {
+            background-color: var(--color-primary-hover);
+        }
+
+        .btn--secondary {
+            background-color: transparent;
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+
+        .btn--secondary:hover {
+            background-color: rgba(var(--color-brown-600-rgb), 0.08);
+        }
+
+        .btn--icon {
+            padding: var(--space-8);
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-action-icon {
+            background: transparent; 
+            border: 1px solid var(--color-border); 
+            color: var(--color-text); 
+            padding: 4px 8px; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            display: flex; 
+            align-items: center; 
+            transition: all 0.2s;
+        }
+        .btn-action-icon:hover {
+            background-color: rgba(var(--color-brown-600-rgb), 0.08);
+        }
+
+        .btn-action-icon.danger {
+            border-color: var(--color-danger-border);
+            color: var(--color-danger);
+        }
+        .btn-action-icon.danger:hover {
+            background-color: var(--color-danger-bg);
+        }
+
+        .main-layout {
+            display: flex;
+            gap: var(--space-24);
+            margin-top: var(--space-24);
+        }
+
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .right-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+
+        .widget {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-20);
+            margin-bottom: var(--space-16);
+        }
+
+        .widget-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-16);
+            color: var(--color-text);
+        }
+
+        .quick-action {
+            display: flex;
+            align-items: center;
+            gap: var(--space-12);
+            padding: var(--space-12);
+            border-radius: var(--radius-base);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: var(--space-8);
+        }
+
+        .quick-action:hover {
+            background-color: rgba(var(--color-brown-600-rgb), 0.05);
+            transform: translateX(4px);
+        }
+
+        .action-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+        }
+
+        .action-text {
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-16);
+            color: var(--color-text);
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-12);
+            padding: var(--space-12) var(--space-16);
+            border-radius: var(--radius-base);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        .nav-item:hover {
+            background-color: rgba(var(--color-brown-600-rgb), 0.08);
+            color: var(--color-text);
+        }
+
+        .nav-item.active {
+            background-color: var(--color-bg-1);
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        .nav-icon {
+            font-size: var(--font-size-lg);
+        }
+
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: var(--space-32) 0;
+        }
+
+        .hero h1 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-12);
+        }
+
+        .hero p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-24);
+        }
+
+        #searchInput:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(var(--color-brown-600-rgb), 0.2);
+        }
+        [data-theme="dark"] #searchInput:focus {
+            box-shadow: 0 0 0 2px rgba(var(--color-gray-400-rgb), 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .right-sidebar {
+                width: 100%;
+            }
+
+            .nav-item {
+                font-size: var(--font-size-sm);
+            }
+        }
+
+        .tabs {
+            display: flex;
+            gap: var(--space-8);
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: var(--space-24);
+        }
+
+        .tab {
+            padding: var(--space-12) var(--space-20);
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+
+        .card {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-20);
+            margin-bottom: var(--space-16);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .thread-meta {
+            display: flex;
+            gap: var(--space-16);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            margin-top: var(--space-12);
+        }
+
+        .status {
+            display: inline-block;
+            padding: var(--space-4) var(--space-12);
+            border-radius: 999px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+        }
+
+        .status--info {
+            background-color: var(--color-bg-1);
+            color: var(--color-primary);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        #threadDetailModal .modal-content {
+            max-width: 800px;
+            width: 95%;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-16);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-8);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: var(--space-8) var(--space-12);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            background: var(--color-background);
+            color: var(--color-text);
+            font-size: var(--font-size-base);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: var(--space-32);
+            color: var(--color-text-secondary);
+        }
+
+        #auth-section {
+            display: flex;
+            align-items: center;
+            gap: var(--space-12);
+        }
+
+        #userProfile {
+            display: flex;
+            align-items: center;
+            gap: var(--space-12);
+        }
+
+        .loading {
+            text-align: center;
+            padding: var(--space-32);
+            color: var(--color-text-secondary);
+        }
+
+        #themeToggle {
+            font-size: var(--font-size-xl);
+            padding: var(--space-8);
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* User Profile Dropdown */
+        .user-profile-dropdown {
+            position: relative;
+        }
+
+        .user-profile-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+            padding: var(--space-8) var(--space-12);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--color-text);
+            font-size: var(--font-size-base);
+        }
+
+        .user-profile-btn:hover {
+            background: rgba(var(--color-brown-600-rgb), 0.08);
+            border-color: var(--color-primary);
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+        }
+
+        .user-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s;
+            z-index: 1000;
+        }
+
+        .user-dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-12);
+            padding: var(--space-12) var(--space-16);
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--color-text);
+            font-size: var(--font-size-base);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(var(--color-brown-600-rgb), 0.08);
+        }
+
+        /* Quick Actions Dropdown */
+        .quick-actions-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            min-width: 200px;
+            z-index: 1000;
+            border: 1px solid var(--color-border);
+            padding: var(--space-8) 0;
+        }
+
+        #quickActionsBtn {
+            cursor: pointer;
+        }
+
+        #quickActionsBtn:hover {
+            background: var(--color-hover) !important;
+        }
+
+
+        .dropdown-item:first-child {
+            border-radius: var(--radius-base) var(--radius-base) 0 0;
+        }
+
+        .dropdown-item:last-child {
+            border-radius: 0 0 var(--radius-base) var(--radius-base);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--color-border);
+            margin: var(--space-4) 0;
+        }
+
+        /* Theme Toggle Switch */
+        .theme-toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 28px;
+            cursor: pointer;
+        }
+
+        .theme-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-border);
+            transition: 0.3s;
+            border-radius: 34px;
+            border: 2px solid var(--color-border);
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "🌙";
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            bottom: 2px;
+            background-color: var(--color-surface);
+            transition: 0.3s;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .theme-toggle-switch input:checked + .slider {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .theme-toggle-switch input:checked + .slider:before {
+            transform: translateX(24px);
+            content: "☀️";
+        }
+
+        /* Settings Modal */
+        .settings-section {
+            margin-bottom: var(--space-24);
+        }
+
+        .settings-section h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-12);
+            color: var(--color-text);
+        }
+
+        .settings-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-12);
+            border-radius: var(--radius-base);
+            margin-bottom: var(--space-8);
+            background: var(--color-background);
+        }
+
+        .settings-option-label {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .settings-option-title {
+            font-weight: 500;
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+        }
+
+        .settings-option-description {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        /* Toggle switch for settings */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-border);
+            transition: 0.3s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background-color: var(--color-primary);
+        }
+
+        .toggle-switch input:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='%23217d8d'/%3E%3Cpath d='M70 80 L70 120 M130 80 L130 120 M100 80 L100 120' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E" alt="IIT Dharwad Logo" onerror="this.style.display='none'; this.nextElementSibling.style.marginLeft='0';">
+                    IIT DHARWAD NEXUS
+                    </div>
+                <div class="search-bar" style="position: relative; flex: 1; max-width: 400px; margin-right: var(--space-16);">
+                    <span class="search-icon" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); pointer-events: none; font-size: 16px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </span>
+                    <input type="text" id="searchInput" placeholder="Search discussions..." 
+                        style="width: 100%; padding: var(--space-8) var(--space-12) var(--space-8) 40px; border: 1px solid var(--color-border); 
+                        border-radius: 20px; background: var(--color-surface); color: var(--color-text); 
+                        font-size: var(--font-size-base); outline: none; transition: all 0.2s;">
+                </div>
+
+                <div id="auth-section">
+                    <label class="theme-toggle-switch" title="Toggle Dark Mode" style="margin-right: var(--space-12);">
+                        <input type="checkbox" id="themeToggleCheckbox">
+                        <span class="slider"></span>
+                    </label>
+                    <button class="btn btn--secondary btn--icon" id="settingsBtn" title="Settings" style="margin-right: var(--space-12);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </button>
+                    
+                    <button class="btn btn--secondary" id="createPollBtn" title="Create Poll" onclick="toggleCreatePollDropdown()" style="margin-right: var(--space-12); padding: var(--space-8); min-width: 44px; display: flex; align-items: center; justify-content: center;">📊</button>
+                    <button class="btn btn--secondary" id="viewPollsBtn" title="View Polls" onclick="toggleViewPollsDropdown()" style="margin-right: var(--space-12); padding: var(--space-8); min-width: 44px; display: flex; align-items: center; justify-content: center;">📋</button>
+                    <div class="dropdown-header-action" style="display:inline-block;position:relative;">
+                        <div id="createPollDropdown" class="poll-dropdown-menu" style="display:none;position:absolute;right:0;top:44px;z-index:2000;background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;min-width:240px;padding:20px 24px;box-shadow: 0 2px 18px rgba(0,0,0,0.08);">
+                          <div class="dropdown-title" style="font-weight:600;margin-bottom:12px;font-size:16px;">Create New Poll</div>
+                          <form id="createPollForm">
+                            <input class="form-control" id="pollQuestion" type="text" placeholder="Poll Question" required style="margin-bottom:10px;width:100%;">
+                            <input class="form-control" id="pollOption1" type="text" placeholder="Option 1" required style="margin-bottom:8px;width:100%;">
+                            <input class="form-control" id="pollOption2" type="text" placeholder="Option 2" required style="margin-bottom:8px;width:100%;">
+                            <div id="extraPollOptions"></div>
+                            <button type="button" onclick="addPollOption()" style="margin-bottom:10px;width:100%;background:none;border:none;color:var(--color-primary);font-weight:500;cursor:pointer;">+ Add Option</button>
+                            <button type="submit" class="btn btn--primary" style="width:100%;margin-bottom:6px;">Create Poll</button>
+                            <button type="button" onclick="closeCreatePollDropdown()" class="btn btn--secondary" style="width:100%;">Cancel</button>
+                          </form>
+                        </div>
+                    </div>
+                    <div class="dropdown-header-action" style="display:inline-block;position:relative;">
+                        <div id="viewPollsDropdown" class="poll-dropdown-menu" style="display:none;position:absolute;right:0;top:44px;z-index:2000;background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;min-width:260px;max-height:350px;overflow-y:auto;padding:20px 18px;box-shadow: 0 2px 18px rgba(0,0,0,0.08);">
+                          <div class="dropdown-title" style="font-weight:600;margin-bottom:12px;font-size:16px;">All Polls</div>
+                          <div id="pollsList" style="max-height:230px;overflow-y:auto;"></div>
+                          <button type="button" onclick="closeViewPollsDropdown()" class="btn btn--secondary" style="width:100%;margin-top:10px;">Close</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn--secondary" id="quickActionsBtn" title="Quick Actions" style="margin-right: var(--space-12); padding: var(--space-8); min-width: 44px; display: flex; align-items: center; justify-content: center; position: relative;">
+                        🚀
+                        <div class="quick-actions-dropdown" id="quickActionsDropdown" style="display: none;">
+                            <div class="dropdown-item" onclick="showNewThreadModal()">
+                                <span>✏️</span>
+                                <span>New Discussion</span>
+                            </div>
+
+                            <div class="dropdown-item" onclick="alert('Campus Events feature coming soon!')">
+                                <span>🎉</span>
+                                <span>Campus Events</span>
+                            </div>
+                            <div class="dropdown-item" onclick="alert('Find Study Group feature coming soon!')">
+                                <span>👥</span>
+                                <span>Find Study Group</span>
+                            </div>
+                            <div class="dropdown-item" onclick="alert('Announcements feature coming soon!')">
+                                <span>📢</span>
+                                <span>Announcements</span>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <button id="signInBtn" class="btn btn--primary">Log In</button>
+                    <div id="userProfile" style="display: none; align-items: center; gap: var(--space-12);">
+                        <div class="user-profile-dropdown">
+                            <button class="user-profile-btn" id="userProfileBtn">
+                                <div class="user-avatar">
+                                    <span id="userInitials">U</span>
+                                </div>
+                                <span id="userName" style="max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>
+                                <span style="font-size: 12px;">▼</span>
+                            </button>
+                            <div class="user-dropdown-menu" id="userDropdown">
+                                <div class="dropdown-item" id="profileMenuItem">
+                                    <span>👤</span>
+                                    <span>My Profile</span>
+                                </div>
+                                <div class="dropdown-item" id="myThreadsMenuItem">
+                                    <span>📝</span>
+                                    <span>My Threads</span>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-item" id="signOutMenuItem">
+                                    <span>🚪</span>
+                                    <span>Sign Out</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to IIT Dharwad Community</h1>
+            <p>Connect, discuss, and collaborate with fellow students</p>
+            <button id="newThreadBtn" class="btn btn--primary">Start a Discussion</button>
+        </div>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <div class="sidebar-title">Categories</div>
+                <div class="nav-item active" data-category="all">
+                    <span class="nav-icon">📋</span>
+                    <span>All Discussions</span>
+                </div>
+                <div class="nav-item" data-category="Campus Issues">
+                    <span class="nav-icon">🏛️</span>
+                    <span>Campus Issues</span>
+                </div>
+                <div class="nav-item" data-category="Academics">
+                    <span class="nav-icon">📚</span>
+                    <span>Academics</span>
+                </div>
+                <div class="nav-item" data-category="Hostel Life">
+                    <span class="nav-icon">🏠</span>
+                    <span>Hostel Life</span>
+                </div>
+                <div class="nav-item" data-category="Clubs & Events">
+                    <span class="nav-icon">🎭</span>
+                    <span>Clubs & Events</span>
+                </div>
+                <div class="nav-item" data-category="Lost & Found">
+                    <span class="nav-icon">🔍</span>
+                    <span>Lost & Found</span>
+                </div>
+                <div class="nav-item" data-category="General Chat">
+                    <span class="nav-icon">💬</span>
+                    <span>General Chat</span>
+                </div>
+                <div class="nav-item" data-category="Anonymous">
+                    <span class="nav-icon">🤫</span>
+                    <span>Anonymous</span>
+                </div>
+            </aside>
+
+            <div class="main-content">
+                <div class="tabs">
+                    <button class="tab active" data-tab="latest">Latest</button>
+                    <button class="tab" data-tab="popular">Popular</button>
+                    <button class="tab" data-tab="trending">Trending</button>
+                    <button class="tab" data-tab="unanswered">Unanswered</button>
+                </div>
+
+                <div id="threads-container">
+                    <div class="loading">Loading threads...</div>
+                </div>
+            </div>
+
+            <aside class="right-sidebar">
+                
+
+                <div class="widget" id="trendingWidget">
+                    <h3 class="widget-title">📈 Trending</h3>
+                    <div id="trendingContent">
+                        <div class="empty-state" style="padding: 40px 20px;">
+                            <div style="font-size: 48px;">🔥</div>
+                            <div style="color: var(--color-text-secondary);">No trending topics yet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">📊 Campus Pulse</h3>
+                                       <div style="padding: 12px 0;">
+                        <div id="activeDiscussionsCount" style="font-size: 28px; font-weight: 700; color: var(--color-primary); margin-bottom: 4px;">0</div>
+                        <div style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.3;">Active Discussions</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div id="newThreadModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: var(--space-20);">Start a New Discussion</h2>
+            <form id="newThreadForm">
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input type="text" id="threadTitle" class="form-control" placeholder="What's your topic?" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select id="threadCategory" class="form-control" required>
+                        <option value="Campus Issues">🏛️ Campus Issues</option>
+                        <option value="Academics">📚 Academics</option>
+                        <option value="Hostel Life">🏠 Hostel Life</option>
+                        <option value="Clubs & Events">🎭 Clubs & Events</option>
+                        <option value="Lost & Found">🔍 Lost & Found</option>
+                        <option value="General Chat">💬 General Chat</option>
+                        <option value="Anonymous">🤫 Anonymous</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Content</label>
+                    <textarea id="threadContent" class="form-control" placeholder="Share your thoughts..." required></textarea>
+                </div>
+                <div style="display: flex; gap: var(--space-12); margin-top: var(--space-20);">
+                    <button type="submit" class="btn btn--primary" style="flex: 1;">Create Thread</button>
+                    <button type="button" id="closeThreadModal" class="btn btn--secondary" style="flex: 1;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="editThreadModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: var(--space-20);">Edit Discussion</h2>
+            <form id="editThreadForm">
+                <input type="hidden" id="editThreadId">
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input type="text" id="editThreadTitle" class="form-control" placeholder="What's your topic?" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select id="editThreadCategory" class="form-control" required>
+                        <option value="Campus Issues">🏛️ Campus Issues</option>
+                        <option value="Academics">📚 Academics</option>
+                        <option value="Hostel Life">🏠 Hostel Life</option>
+                        <option value="Clubs & Events">🎭 Clubs & Events</option>
+                        <option value="Lost & Found">🔍 Lost & Found</option>
+                        <option value="General Chat">💬 General Chat</option>
+                        <option value="Anonymous">🤫 Anonymous</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Content</label>
+                    <textarea id="editThreadContent" class="form-control" placeholder="Share your thoughts..." required></textarea>
+                </div>
+                <div style="display: flex; gap: var(--space-12); margin-top: var(--space-20);">
+                    <button type="submit" class="btn btn--primary" style="flex: 1;">Save Changes</button>
+                    <button type="button" id="closeEditThreadModal" class="btn btn--secondary" style="flex: 1;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="threadDetailModal" class="modal">
+        <div class="modal-content">
+            <div id="threadDetailContent">
+                </div>
+            <button id="closeThreadDetailModal" class="btn btn--secondary" style="width: 100%; margin-top: var(--space-16);">Close</button>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: var(--space-20);">⚙️ Settings</h2>
+            
+            <div class="settings-section">
+                <h3>Appearance</h3>
+                <div class="settings-option">
+                    <div class="settings-option-label">
+                        <div class="settings-option-title">Dark Mode</div>
+                        <div class="settings-option-description">Toggle between light and dark theme</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Notifications</h3>
+                <div class="settings-option">
+                    <div class="settings-option-label">
+                        <div class="settings-option-title">New Replies</div>
+                        <div class="settings-option-description">Get notified when someone replies to your thread</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="replyNotifications" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="settings-option">
+                    <div class="settings-option-label">
+                        <div class="settings-option-title">Trending Topics</div>
+                        <div class="settings-option-description">Get updates on trending discussions</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="trendingNotifications" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Privacy</h3>
+                <div class="settings-option">
+                    <div class="settings-option-label">
+                        <div class="settings-option-title">Show Online Status</div>
+                        <div class="settings-option-description">Let others see when you're active</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="onlineStatus" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="settings-option">
+                    <div class="settings-option-label">
+                        <div class="settings-option-title">Anonymous Browsing</div>
+                        <div class="settings-option-description">Hide your profile when viewing threads</div>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="anonymousBrowsing">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <button id="closeSettingsModal" class="btn btn--secondary" style="width: 100%; margin-top: var(--space-16);">Close</button>
+        </div>
+    </div>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: var(--space-20);">Log In / Sign Up</h2>
+            <div class="form-group">
+                <label class="form-label">Display Name (for sign up)</label>
+                <input type="text" id="authDisplayName" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" id="authEmail" class="form-control" placeholder="rollno@iitdh.ac.in" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" id="authPassword" class="form-control" placeholder="••••••••" required>
+            </div>
+            <div style="display: flex; gap: var(--space-12); margin-top: var(--space-20);">
+                <button id="signInBtnModal" class="btn btn--primary" style="flex: 1;">Log In</button>
+                <button id="signUpBtnModal" class="btn btn--secondary" style="flex: 1;">Sign Up</button>
+            </div>
+            <button id="closeAuthModal" class="btn btn--secondary" style="width: 100%; margin-top: var(--space-12);">Cancel</button>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getFirestore, collection, addDoc, onSnapshot, query, where, orderBy, doc, updateDoc, increment, serverTimestamp, setDoc, getDoc, getDocs, deleteDoc, writeBatch } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDfzgjzcIfRFrwtLg8R8FlQc_6f6-1SLzM",
+            authDomain: "nexus-eee18.firebaseapp.com",
+            projectId: "nexus-eee18",
+            storageBucket: "nexus-eee18.firebasestorage.app",
+            messagingSenderId: "528267788455",
+            appId: "1:528267788455:web:f2e047a7201606591a9b82"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        console.log('Firebase initialized successfully with modular SDK!');
+
+        // Authentication state observer
+        onAuthStateChanged(auth, user => {
+            const signInBtn = document.getElementById('signInBtn');
+            const userProfile = document.getElementById('userProfile');
+            const userName = document.getElementById('userName');
+            const userInitials = document.getElementById('userInitials');
+
+            if (user) {
+                signInBtn.style.display = 'none';
+                userProfile.style.display = 'flex';
+                const displayName = user.displayName || user.email;
+                userName.textContent = displayName;
+                
+                // Set user initials
+                const initials = displayName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+                userInitials.textContent = initials;
+                
+                console.log('User signed in:', user.email);
+            } else {
+                signInBtn.style.display = 'block';
+                userProfile.style.display = 'none';
+                console.log('User signed out');
+            }
+            // Re-load threads on auth change to show/hide edit/delete buttons
+            loadThreads(currentSort, currentCategory);
+        });
+
+        // Sign in function with improved error handling
+        async function signIn(email, password) {
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                closeAuthModal();
+                alert('Logged in successfully! Welcome back!');
+            } catch (error) {
+                console.error('Sign in error:', error);
+                let errorMessage = 'Sign in failed';
+                switch (error.code) {
+                    case 'auth/user-not-found':
+                        errorMessage = 'No account found with this email. Try signing up instead.';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Incorrect password. Please try again.';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'Please enter a valid email address.';
+                        break;
+                    case 'auth/user-disabled':
+                        errorMessage = 'This account has been disabled. Contact admin.';
+                        break;
+                    case 'auth/network-request-failed':
+                        errorMessage = 'Network error. Please check your internet connection.';
+                        break;
+                    default:
+                        errorMessage = error.message;
+                }
+                alert(errorMessage);
+            }
+        }
+
+        // Sign up function with improved error handling
+        async function signUp(email, password, displayName) {
+            if (!email || !password) {
+                alert('Please enter both email and password');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long');
+                return;
+            }
+
+            if (!displayName || !displayName.trim()) {
+                displayName = email.split('@')[0];
+            }
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                await updateProfile(userCredential.user, {
+                    displayName: displayName.trim()
+                });
+
+                await setDoc(doc(db, 'users', userCredential.user.uid), {
+                    displayName: displayName.trim(),
+                    email: email,
+                    createdAt: serverTimestamp()
+                });
+
+                closeAuthModal();
+                alert('Account created successfully! Welcome to IIT Dharwad Nexus!');
+            } catch (error) {
+                console.error('Sign up error:', error);
+                let errorMessage = 'Sign up failed';
+                switch (error.code) {
+                    case 'auth/email-already-in-use':
+                        errorMessage = 'This email is already registered. Try signing in instead.';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'Please enter a valid email address.';
+                        break;
+                    case 'auth/weak-password':
+                        errorMessage = 'Password is too weak. Use at least 6 characters.';
+                        break;
+                    case 'auth/operation-not-allowed':
+                        errorMessage = 'Email/password sign-up is not enabled. Please contact admin.';
+                        break;
+                    case 'auth/network-request-failed':
+                        errorMessage = 'Network error. Please check your internet connection.';
+                        break;
+                    default:
+                        errorMessage = error.message;
+                }
+                alert(errorMessage);
+            }
+        }
+
+        // Modal functions
+        function showAuthModal() {
+            document.getElementById('authModal').style.display = 'flex';
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+            document.getElementById('authEmail').value = '';
+            document.getElementById('authPassword').value = '';
+            document.getElementById('authDisplayName').value = '';
+        }
+
+        function showNewThreadModal() {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in to create a thread');
+                showAuthModal();
+                return;
+            }
+            document.getElementById('newThreadModal').style.display = 'flex';
+        }
+
+        function closeNewThreadModal() {
+            document.getElementById('newThreadModal').style.display = 'none';
+            document.getElementById('newThreadForm').reset();
+        }
+
+        // *** NEW: Edit Thread Modal Functions ***
+        function showEditThreadModal(thread, threadId) {
+            const user = auth.currentUser;
+            if (!user || user.uid !== thread.authorId) {
+                alert('You are not authorized to edit this thread.');
+                return;
+            }
+            document.getElementById('editThreadId').value = threadId;
+            document.getElementById('editThreadTitle').value = thread.title;
+            document.getElementById('editThreadContent').value = thread.content;
+            document.getElementById('editThreadCategory').value = thread.category;
+            document.getElementById('editThreadModal').style.display = 'flex';
+        }
+
+        function closeEditThreadModal() {
+            document.getElementById('editThreadModal').style.display = 'none';
+            document.getElementById('editThreadForm').reset();
+        }
+
+        // Create thread function
+        async function createThread(title, content, category) {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in to create a thread');
+                showAuthModal();
+                return;
+            }
+
+            if (!title || !content || !category) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            try {
+                const threadData = {
+                    title: title.trim(),
+                    content: content.trim(),
+                    category: category,
+                    authorId: user.uid,
+                    authorName: user.displayName || user.email || 'Anonymous',
+                    authorEmail: user.email,
+                    createdAt: serverTimestamp(),
+                    updatedAt: serverTimestamp(),
+                    viewCount: 0,
+                    replyCount: 0,
+                    likes: 0
+                };
+
+                console.log('Creating thread with data:', threadData);
+                const docRef = await addDoc(collection(db, 'threads'), threadData);
+                console.log('Thread created successfully with ID:', docRef.id);
+                closeNewThreadModal();
+                alert('Thread created successfully!');
+            } catch (error) {
+                console.error('Error creating thread:', error);
+                let errorMessage = 'Failed to create thread';
+                if (error.code === 'permission-denied') {
+                    errorMessage = 'You do not have permission to create threads. Please check Firestore security rules.';
+                } else if (error.code === 'unavailable') {
+                    errorMessage = 'Firestore service is unavailable. Please check your internet connection.';
+                } else {
+                    errorMessage = error.message;
+                }
+                alert(errorMessage);
+            }
+        }
+
+        // *** NEW: Update Thread Function ***
+        async function updateThread(threadId, title, content, category) {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in to edit this thread');
+                return;
+            }
+
+            if (!title || !content || !category || !threadId) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            try {
+                const threadRef = doc(db, 'threads', threadId);
+                await updateDoc(threadRef, {
+                    title: title.trim(),
+                    content: content.trim(),
+                    category: category,
+                    updatedAt: serverTimestamp()
+                });
+                closeEditThreadModal();
+                alert('Thread updated successfully!');
+            } catch (error) {
+                console.error('Error updating thread:', error);
+                alert('Failed to update thread. ' + error.message);
+            }
+        }
+        
+        // *** NEW: Delete Thread Function (with sub-collection delete) ***
+        async function deleteThread(threadId) {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in to delete this thread');
+                return;
+            }
+
+            if (!confirm('Are you sure you want to delete this thread? This will also delete all comments and cannot be undone.')) {
+                return;
+            }
+            
+            try {
+                // 1. Delete all comments in the sub-collection
+                const commentsRef = collection(db, 'threads', threadId, 'comments');
+                const q = query(commentsRef);
+                const querySnapshot = await getDocs(q);
+                
+                const batch = writeBatch(db);
+                querySnapshot.forEach((doc) => {
+                    batch.delete(doc.ref);
+                });
+                await batch.commit();
+                console.log('All comments deleted.');
+
+                // 2. Delete the main thread document
+                await deleteDoc(doc(db, 'threads', threadId));
+                
+                // 3. Close modal if it's open
+                const detailModal = document.getElementById('threadDetailModal');
+                if (detailModal.style.display === 'flex') {
+                    detailModal.style.display = 'none';
+                }
+                
+                alert('Thread deleted successfully!');
+            } catch (error) {
+                console.error('Error deleting thread:', error);
+                alert('Failed to delete thread. ' + error.message);
+            }
+        }
+
+
+        // Global filter state
+        let currentCategory = 'all';
+        let currentSort = 'latest';
+
+
+        // Search threads function
+        let allThreadsData = []; // This will hold the currently filtered (by category/sort) list
+        let masterThreadList = []; // This will hold *all* threads from Firebase
+
+        function searchThreads(query) {
+            const searchQuery = query.toLowerCase().trim();
+            const threadsContainer = document.getElementById('threads-container');
+
+            if (!searchQuery) {
+                // If search is empty, show the current category/sort filtered threads
+                displayFilteredThreads(allThreadsData);
+                return;
+            }
+
+            // Filter threads based on search query
+            const filteredThreads = masterThreadList.filter(item => {
+                const thread = item.data;
+                // Also apply the current category filter unless it's 'all'
+                if (currentCategory !== 'all' && thread.category !== currentCategory) {
+                    return false;
+                }
+                return thread.title.toLowerCase().includes(searchQuery) ||
+                       thread.content.toLowerCase().includes(searchQuery) ||
+                       thread.authorName.toLowerCase().includes(searchQuery) ||
+                       thread.category.toLowerCase().includes(searchQuery);
+            });
+
+            displayFilteredThreads(filteredThreads.map(t => ({ id: t.id, thread: t.data })));
+        }
+
+        function displayFilteredThreads(threadsData) {
+            const threadsContainer = document.getElementById('threads-container');
+            threadsContainer.innerHTML = '';
+
+            if (threadsData.length === 0) {
+                threadsContainer.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--color-text-secondary);">No threads found matching your criteria.</div>';
+                return;
+            }
+
+            threadsData.forEach(item => {
+                const threadElement = createThreadElement(item.thread, item.id);
+                threadsContainer.appendChild(threadElement);
+            });
+        }
+
+        // Load threads with real-time updates
+        function loadThreads(sortBy = 'latest', category = 'all') {
+            const threadsContainer = document.getElementById('threads-container');
+            currentSort = sortBy;
+            currentCategory = category;
+
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput.value) {
+                searchInput.value = '';
+            }
+
+            const threadsRef = collection(db, 'threads');
+            const q = query(threadsRef, orderBy('createdAt', 'desc'));
+
+            onSnapshot(q, snapshot => {
+                threadsContainer.innerHTML = '';
+                
+                if (snapshot.empty) {
+                    threadsContainer.innerHTML = `
+                        <div class="empty-state">
+                            <p style="font-size: var(--font-size-lg); margin-bottom: var(--space-8);">No threads yet</p>
+                            <p>Be the first to start a discussion in the community!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                masterThreadList = [];
+                snapshot.forEach(doc => {
+                    masterThreadList.push({
+                        id: doc.id,
+                        data: doc.data()
+                    });
+                });
+
+                let threads = [...masterThreadList];
+
+                if (category !== 'all') {
+                    threads = threads.filter(thread => thread.data.category === category);
+                }
+
+                switch (sortBy) {
+                    case 'latest':
+                        break;
+                    case 'popular':
+                        threads.sort((a, b) => (b.data.viewCount || 0) - (a.data.viewCount || 0));
+                        break;
+                    case 'trending':
+                        threads.sort((a, b) => (b.data.replyCount || 0) - (a.data.replyCount || 0));
+                        break;
+                    case 'unanswered':
+                        threads = threads.filter(thread => (thread.data.replyCount || 0) === 0);
+                        break;
+                }
+
+                if (threads.length === 0) {
+                    threadsContainer.innerHTML = `
+                        <div class="empty-state">
+                            <p style="font-size: var(--font-size-lg); margin-bottom: var(--space-8);">No threads found</p>
+                            <p>No discussions match your current filters.</p>
+                        </div>
+                    `;
+                    const countElement = document.getElementById('activeDiscussionsCount');
+                    if (countElement) {
+                        countElement.textContent = '0';
+                    }
+                    return;
+                }
+
+                allThreadsData = threads.map(thread => ({
+                    id: thread.id,
+                    thread: thread.data
+                }));
+
+                threads.forEach(thread => {
+                    const threadElement = createThreadElement(thread.data, thread.id);
+                    threadsContainer.appendChild(threadElement);
+                });
+
+                const countElement = document.getElementById('activeDiscussionsCount');
+                if (countElement) {
+                    countElement.textContent = threads.length;
+                }
+
+                updateTrendingSection(masterThreadList);
+
+            }, error => {
+                console.error('Error loading threads:', error);
+                threadsContainer.innerHTML = `
+                    <div class="empty-state">
+                        <p style="color: var(--color-text);">Failed to load threads</p>
+                        <p>Please refresh the page or check your connection</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Create thread element
+        function createThreadElement(thread, threadId) {
+            const div = document.createElement('div');
+            div.className = 'card';
+            div.style.cursor = 'pointer';
+
+            const createdDate = thread.createdAt ? 
+                thread.createdAt.toDate().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }) : 
+                'Just now';
+
+            // *** NEW: Check if current user is the author ***
+            const user = auth.currentUser;
+            const isAuthor = user && thread.authorId === user.uid;
+
+            div.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--space-8);">
+                    <h3 style="margin: 0; font-size: var(--font-size-lg); color: var(--color-text);">${escapeHtml(thread.title)}</h3>
+                    <span class="status status--info">${escapeHtml(thread.category)}</span>
+                </div>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-12); line-height: 1.5;">
+                    ${escapeHtml(thread.content.substring(0, 150))}${thread.content.length > 150 ? '...' : ''}
+                </p>
+                <div class="thread-meta" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div style="display: flex; gap: var(--space-16); flex-wrap: wrap;">
+                        <span>👤 ${thread.category === 'Anonymous' ? 'Anonymous User' : escapeHtml(thread.authorName)}</span>
+                        <span>📅 ${createdDate}</span>
+                        <span>💬 ${thread.replyCount || 0} replies</span>
+                        <span>👁️ ${thread.viewCount || 0} views</span>
+                    </div>
+                    <div style="display: flex; gap: 6px; align-items: center;">
+                        ${isAuthor ? `
+                        <button class="edit-thread-btn btn-action-icon" data-thread-id="${threadId}" title="Edit Thread">✏️</button>
+                        <button class="delete-thread-btn btn-action-icon danger" data-thread-id="${threadId}" title="Delete Thread">🗑️</button>
+                        ` : ''}
+                        <button class="bookmark-thread-btn btn-action-icon" data-thread-id="${threadId}" title="Bookmark">🔖</button>
+                        <button class="share-thread-btn btn-action-icon" data-thread-id="${threadId}" title="Share">📤</button>
+                        <button class="thread-like-btn" data-thread-id="${threadId}" style="background: transparent; border: 1px solid var(--color-border); color: var(--color-text); padding: 4px 12px; border-radius: 16px; cursor: pointer; font-size: var(--font-size-sm); display: flex; align-items: center; gap: 4px; transition: all 0.2s;">
+                            <span>🤍</span>
+                            <span class="like-count">${thread.likes || 0}</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            div.addEventListener('click', (e) => {
+                // Don't open thread if clicking ANY action button
+                if (e.target.closest('.btn-action-icon, .thread-like-btn')) {
+                    return;
+                }
+                openThreadDetails(thread, threadId);
+            });
+
+            // *** NEW: Add event listeners for Edit/Delete ***
+            const editBtn = div.querySelector('.edit-thread-btn');
+            if (editBtn) {
+                editBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // Need to pass the full thread object
+                    showEditThreadModal(thread, threadId);
+                });
+            }
+            
+            const deleteBtn = div.querySelector('.delete-thread-btn');
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteThread(threadId);
+                });
+            }
+
+            // Add like button event listener
+            const likeBtn = div.querySelector('.thread-like-btn');
+            if (likeBtn) {
+                const hasLiked = user && thread.likedBy && thread.likedBy.includes(user.uid);
+                if (hasLiked) {
+                    likeBtn.style.background = 'var(--color-primary)';
+                    likeBtn.style.borderColor = 'var(--color-primary)';
+                    likeBtn.style.color = 'white';
+                    likeBtn.querySelector('span:first-child').textContent = '❤️';
+                }
+
+                likeBtn.addEventListener('click', async (e) => {
+                    e.stopPropagation();
+                    if (!user) {
+                        alert('Please log in to like threads');
+                        showAuthModal();
+                        return;
+                    }
+                    await toggleThreadLike(threadId, user.uid);
+                });
+            }
+            
+            // Add bookmark button event listener
+            const bookmarkBtn = div.querySelector('.bookmark-thread-btn');
+            if (bookmarkBtn) {
+                const bookmarks = JSON.parse(localStorage.getItem('bookmarkedThreads') || '[]');
+                if (bookmarks.includes(threadId)) {
+                    bookmarkBtn.textContent = '🔖✓';
+                    bookmarkBtn.style.background = 'var(--color-primary)';
+                    bookmarkBtn.style.borderColor = 'var(--color-primary)';
+                    bookmarkBtn.style.color = 'white';
+                }
+
+                bookmarkBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    bookmarkThread(threadId);
+                });
+            }
+
+            // Add share button event listener
+            const shareBtn = div.querySelector('.share-thread-btn');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    shareThread(threadId, thread.title);
+                });
+            }
+
+            return div;
+        }
+
+        // Helper function to escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+
+        // Bookmark thread function
+        function bookmarkThread(threadId) {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in to bookmark threads');
+                showAuthModal();
+                return;
+            }
+
+            let bookmarks = JSON.parse(localStorage.getItem('bookmarkedThreads') || '[]');
+            const index = bookmarks.indexOf(threadId);
+
+            if (index === -1) {
+                bookmarks.push(threadId);
+                localStorage.setItem('bookmarkedThreads', JSON.stringify(bookmarks));
+                alert('Thread bookmarked! ✓');
+            } else {
+                bookmarks.splice(index, 1);
+                localStorage.setItem('bookmarkedThreads', JSON.stringify(bookmarks));
+                alert('Bookmark removed');
+            }
+
+            loadThreads(currentSort, currentCategory); // Reload to show bookmark status
+        }
+
+        // Share thread function
+        function shareThread(threadId, threadTitle) {
+            const url = window.location.origin + window.location.pathname + '?thread=' + threadId;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'IIT Dharwad Nexus - ' + threadTitle,
+                    text: 'Check out this discussion on IIT Dharwad Nexus',
+                    url: url
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Link copied to clipboard! 📋\n\nShare this link:\n' + url);
+                }).catch(() => {
+                    prompt('Copy this link to share:', url);
+                });
+            }
+        }
+
+        // Increment view count
+        async function incrementViewCount(threadId) {
+            try {
+                const threadRef = doc(db, 'threads', threadId);
+                await updateDoc(threadRef, {
+                    viewCount: increment(1)
+                });
+            } catch (error) {
+                console.error('Error incrementing view count:', error);
+            }
+        }
+
+        // Event Listeners
+        document.getElementById('signInBtn').addEventListener('click', showAuthModal);
+        document.getElementById('closeAuthModal').addEventListener('click', closeAuthModal);
+
+        document.getElementById('signInBtnModal').addEventListener('click', () => {
+            const email = document.getElementById('authEmail').value.trim();
+            const password = document.getElementById('authPassword').value;
+            if (!email || !password) {
+                alert('Please enter both email and password');
+                return;
+            }
+            signIn(email, password);
+        });
+
+        document.getElementById('signUpBtnModal').addEventListener('click', () => {
+            const email = document.getElementById('authEmail').value.trim();
+            const password = document.getElementById('authPassword').value;
+            const displayName = document.getElementById('authDisplayName').value.trim();
+            signUp(email, password, displayName);
+        });
+
+        // User profile dropdown toggle
+        document.getElementById('userProfileBtn')?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const dropdown = document.getElementById('userDropdown');
+            dropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdown = document.getElementById('userDropdown');
+            const profileBtn = document.getElementById('userProfileBtn');
+            if (dropdown && !profileBtn?.contains(e.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Profile menu items
+        document.getElementById('profileMenuItem')?.addEventListener('click', () => {
+            alert('Profile feature coming soon!');
+            document.getElementById('userDropdown').classList.remove('show');
+        });
+
+        document.getElementById('myThreadsMenuItem')?.addEventListener('click', () => {
+            alert('My Threads feature coming soon!');
+            document.getElementById('userDropdown').classList.remove('show');
+        });
+
+        document.getElementById('signOutMenuItem')?.addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                alert('Signed out successfully');
+                document.getElementById('userDropdown').classList.remove('show');
+            } catch (error) {
+                console.error('Sign out error:', error);
+            }
+        });
+
+        document.getElementById('newThreadBtn').addEventListener('click', showNewThreadModal);
+        document.getElementById('closeThreadModal').addEventListener('click', closeNewThreadModal);
+        document.getElementById('closeEditThreadModal').addEventListener('click', closeEditThreadModal); // New
+
+        document.getElementById('newThreadForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('threadTitle').value;
+            const content = document.getElementById('threadContent').value;
+            const category = document.getElementById('threadCategory').value;
+            createThread(title, content, category);
+        });
+        
+        // *** NEW: Edit Thread Form Submission ***
+        document.getElementById('editThreadForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const threadId = document.getElementById('editThreadId').value;
+            const title = document.getElementById('editThreadTitle').value;
+            const content = document.getElementById('editThreadContent').value;
+            const category = document.getElementById('editThreadCategory').value;
+            updateThread(threadId, title, content, category);
+        });
+
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const tabType = tab.getAttribute('data-tab');
+                loadThreads(tabType, currentCategory);
+            });
+        });
+
+        // Category switching with proper filtering
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                const category = item.getAttribute('data-category');
+                console.log('Switching to category:', category);
+                loadThreads(currentSort, category);
+            });
+        });
+
+        // Theme toggle function
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update checkboxes
+            const themeCheckbox = document.getElementById('themeToggleCheckbox');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            if (themeCheckbox) {
+                themeCheckbox.checked = newTheme === 'dark';
+            }
+            if (darkModeToggle) {
+                darkModeToggle.checked = newTheme === 'dark';
+            }
+        }
+
+        // Initialize theme on page load
+        function initializeTheme() {
+            const html = document.documentElement;
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', savedTheme);
+            
+            // Update checkboxes
+            const themeCheckbox = document.getElementById('themeToggleCheckbox');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            if (themeCheckbox) {
+                themeCheckbox.checked = savedTheme === 'dark';
+            }
+            if (darkModeToggle) {
+                darkModeToggle.checked = savedTheme === 'dark';
+            }
+        }
+
+        // Theme toggle event listeners
+        document.getElementById('themeToggleCheckbox')?.addEventListener('change', toggleTheme);
+        document.getElementById('darkModeToggle')?.addEventListener('change', toggleTheme);
+
+        // Settings modal functions
+        function showSettingsModal() {
+            document.getElementById('settingsModal').style.display = 'flex';
+            loadSettings();
+        }
+
+        function closeSettingsModal() {
+            document.getElementById('settingsModal').style.display = 'none';
+        }
+
+        function loadSettings() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            if (darkModeToggle) {
+                darkModeToggle.checked = savedTheme === 'dark';
+            }
+            const replyNotifications = localStorage.getItem('replyNotifications') !== 'false';
+            const trendingNotifications = localStorage.getItem('trendingNotifications') !== 'false';
+            document.getElementById('replyNotifications').checked = replyNotifications;
+            document.getElementById('trendingNotifications').checked = trendingNotifications;
+            const onlineStatus = localStorage.getItem('onlineStatus') !== 'false';
+            const anonymousBrowsing = localStorage.getItem('anonymousBrowsing') === 'true';
+            document.getElementById('onlineStatus').checked = onlineStatus;
+            document.getElementById('anonymousBrowsing').checked = anonymousBrowsing;
+        }
+
+        function saveSettings() {
+            localStorage.setItem('replyNotifications', document.getElementById('replyNotifications').checked);
+            localStorage.setItem('trendingNotifications', document.getElementById('trendingNotifications').checked);
+            localStorage.setItem('onlineStatus', document.getElementById('onlineStatus').checked);
+            localStorage.setItem('anonymousBrowsing', document.getElementById('anonymousBrowsing').checked);
+        }
+
+        // Add event listeners for settings toggles
+        document.getElementById('replyNotifications')?.addEventListener('change', saveSettings);
+        document.getElementById('trendingNotifications')?.addEventListener('change', saveSettings);
+        document.getElementById('onlineStatus')?.addEventListener('change', saveSettings);
+        document.getElementById('anonymousBrowsing')?.addEventListener('change', saveSettings);
+
+        // Settings button event listener
+        document.getElementById('settingsBtn')?.addEventListener('click', showSettingsModal);
+        document.getElementById('closeSettingsModal')?.addEventListener('click', closeSettingsModal);
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('keyup', () => {
+                    searchThreads(searchInput.value);
+                });
+            }
+
+            loadThreads('latest');
+            console.log('App initialized, loading threads...');
+        });
+
+        // Open thread details with comments
+        function openThreadDetails(thread, threadId) {
+            // *** VIEW COUNT FIX: Moved increment here ***
+            incrementViewCount(threadId);
+
+            const modal = document.getElementById('threadDetailModal');
+            const content = document.getElementById('threadDetailContent');
+
+            const createdDate = thread.createdAt ? 
+                thread.createdAt.toDate().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : 
+                'Just now';
+
+            // *** NEW: Check for author ***
+            const user = auth.currentUser;
+            const isAuthor = user && thread.authorId === user.uid;
+
+            content.innerHTML = `
+                <div class="thread-detail-header">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--space-12);">
+                        <h2 style="margin: 0; font-size: var(--font-size-2xl); color: var(--color-text);">${escapeHtml(thread.title)}</h2>
+                        <span class="status status--info">${escapeHtml(thread.category)}</span>
+                    </div>
+                    <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        <div>
+                            <span>👤 ${thread.category === 'Anonymous' ? 'Anonymous User' : escapeHtml(thread.authorName)}</span>
+                            <span style="margin-left: var(--space-16);">📅 ${createdDate}</span>
+                            <span style="margin-left: var(--space-16);">👁️ ${thread.viewCount + 1 || 1} views</span> </div>
+                        ${isAuthor ? `
+                        <div style="display: flex; gap: 6px; align-items: center;">
+                            <button class="btn-action-icon" onclick="showEditThreadModal(${JSON.stringify(thread).replace(/"/g, '&quot;')}, '${threadId}')" title="Edit Thread">✏️ Edit</button>
+                            <button class="btn-action-icon danger" onclick="deleteThread('${threadId}')" title="Delete Thread">🗑️ Delete</button>
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+                <div class="thread-detail-content" style="margin-top: var(--space-20); padding-bottom: var(--space-20);">
+                    <p style="white-space: pre-wrap; line-height: 1.7;">${escapeHtml(thread.content)}</p>
+                </div>
+                <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-16);">
+                    <h3 style="margin-bottom: var(--space-16); font-size: var(--font-size-lg);">
+                        💬 Comments (${thread.replyCount || 0})
+                    </h3>
+                    <div id="commentsContainer">
+                        <div class="loading">Loading comments...</div>
+                    </div>
+                    <div style="margin-top: var(--space-20);">
+                        <h4 style="margin-bottom: var(--space-12); font-size: var(--font-size-base);">Add a Comment</h4>
+                        <form id="commentForm" style="display: flex; flex-direction: column; gap: var(--space-12);">
+                            <textarea id="commentContent" class="form-control" placeholder="Share your thoughts..." rows="3" required></textarea>
+                            <button type="submit" class="btn btn--primary">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+            loadComments(threadId, thread.category); // Pass category for anonymous check
+            setupCommentForm(threadId);
+        }
+
+        // Load comments for a thread
+        function loadComments(threadId, threadCategory) {
+            const commentsContainer = document.getElementById('commentsContainer');
+            const commentsRef = collection(db, 'threads', threadId, 'comments');
+            const q = query(commentsRef, orderBy('createdAt', 'asc'));
+
+            onSnapshot(q, snapshot => {
+                if (snapshot.empty) {
+                    commentsContainer.innerHTML = `
+                        <div class="empty-state" style="padding: var(--space-20);">
+                            <p>No comments yet. Be the first to comment!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                commentsContainer.innerHTML = '';
+                snapshot.forEach(doc => {
+                    const comment = doc.data();
+                    const commentElement = createCommentElement(comment, doc.id, threadId, threadCategory);
+                    commentsContainer.appendChild(commentElement);
+                });
+
+                // Add event listeners to like/edit/delete buttons
+                document.querySelectorAll('.like-btn').forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                        e.stopPropagation();
+                        const user = auth.currentUser;
+                        if (!user) {
+                            alert('Please log in to like comments');
+                            document.getElementById('threadDetailModal').style.display = 'none';
+                            showAuthModal();
+                            return;
+                        }
+                        const commentId = btn.getAttribute('data-comment-id');
+                        await toggleCommentLike(threadId, commentId, user.uid);
+                    });
+                });
+                
+                document.querySelectorAll('.edit-comment-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const commentId = btn.getAttribute('data-comment-id');
+                        editComment(threadId, commentId);
+                    });
+                });
+                
+                document.querySelectorAll('.delete-comment-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const commentId = btn.getAttribute('data-comment-id');
+                        deleteComment(threadId, commentId);
+                    });
+                });
+
+            }, error => {
+                console.error('Error loading comments:', error);
+                commentsContainer.innerHTML = `
+                    <div class="empty-state" style="padding: var(--space-20);">
+                        <p style="color: var(--color-text);">Failed to load comments</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Toggle thread like
+        async function toggleThreadLike(threadId, userId) {
+            try {
+                const threadRef = doc(db, 'threads', threadId);
+                const threadSnap = await getDoc(threadRef);
+                
+                if (!threadSnap.exists()) return;
+                
+                const threadData = threadSnap.data();
+                const likedBy = threadData.likedBy || [];
+                const hasLiked = likedBy.includes(userId);
+
+                if (hasLiked) {
+                    await updateDoc(threadRef, {
+                        likes: increment(-1),
+                        likedBy: likedBy.filter(id => id !== userId)
+                    });
+                } else {
+                    await updateDoc(threadRef, {
+                        likes: increment(1),
+                        likedBy: [...likedBy, userId]
+                    });
+                }
+            } catch (error) {
+                console.error('Error toggling thread like:', error);
+                alert('Failed to like thread. Please try again.');
+            }
+        }
+
+        // Toggle comment like
+        async function toggleCommentLike(threadId, commentId, userId) {
+            try {
+                const commentRef = doc(db, 'threads', threadId, 'comments', commentId);
+                const commentSnap = await getDoc(commentRef);
+                
+                if (!commentSnap.exists()) return;
+                
+                const commentData = commentSnap.data();
+                const likedBy = commentData.likedBy || [];
+                const hasLiked = likedBy.includes(userId);
+
+                if (hasLiked) {
+                    await updateDoc(commentRef, {
+                        likes: increment(-1),
+                        likedBy: likedBy.filter(id => id !== userId)
+                    });
+                } else {
+                    await updateDoc(commentRef, {
+                        likes: increment(1),
+                        likedBy: [...likedBy, userId]
+                    });
+                }
+            } catch (error) {
+                console.error('Error toggling like:', error);
+                alert('Failed to like comment. Please try again.');
+            }
+        }
+
+        // Create comment element
+        function createCommentElement(comment, commentId, threadId, threadCategory) {
+            const div = document.createElement('div');
+            div.className = 'comment-item';
+            div.setAttribute('data-comment-id', commentId);
+            div.style.cssText = 'padding: var(--space-12) 0; border-bottom: 1px solid var(--color-border);';
+
+            const createdDate = comment.createdAt ? 
+                comment.createdAt.toDate().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : 
+                'Just now';
+
+            const likeCount = comment.likes || 0;
+            const user = auth.currentUser;
+            const hasLiked = user && comment.likedBy && comment.likedBy.includes(user.uid);
+            const isAuthor = user && comment.authorId === user.uid;
+
+            div.innerHTML = `
+                <div class="comment-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-8); font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-weight: 500; color: var(--color-text);">👤 ${threadCategory === 'Anonymous' ? 'Anonymous User' : escapeHtml(comment.authorName)}</span>
+                        <span style="margin-left: var(--space-8);">📅 ${createdDate} ${comment.editedAt ? '(edited)' : ''}</span>
+                    </div>
+                    <div style="display: flex; gap: 6px; align-items: center;">
+                        ${isAuthor ? `
+                            <button class="edit-comment-btn" data-comment-id="${commentId}" title="Edit comment" style="background: transparent; border: 1px solid var(--color-border); color: var(--color-text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 14px; display: flex; align-items: center; transition: all 0.2s;">
+                                ✏️
+                            </button>
+                            <button class="delete-comment-btn" data-comment-id="${commentId}" title="Delete comment" style="background: transparent; border: 1px solid var(--color-danger-border); color: var(--color-danger); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 14px; display: flex; align-items: center; transition: all 0.2s;">
+                                🗑️
+                            </button>
+                        ` : ''}
+                        <button class="like-btn" data-comment-id="${commentId}" style="background: ${hasLiked ? 'var(--color-primary)' : 'transparent'}; border: 1px solid ${hasLiked ? 'var(--color-primary)' : 'var(--color-border)'}; color: ${hasLiked ? 'white' : 'var(--color-text)'}; padding: 4px 12px; border-radius: 16px; cursor: pointer; font-size: var(--font-size-sm); display: flex; align-items: center; gap: 4px; transition: all 0.2s;">
+                            <span>${hasLiked ? '❤️' : '🤍'}</span>
+                            <span>${likeCount}</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="comment-content" data-comment-id="${commentId}">
+                    <p style="margin: 0; white-space: pre-wrap; line-height: 1.6;">${escapeHtml(comment.content)}</p>
+                </div>
+            `;
+
+            return div;
+        }
+
+
+        // Edit comment function
+        async function editComment(threadId, commentId) {
+            const commentElement = document.querySelector(`.comment-content[data-comment-id="${commentId}"]`);
+            if (!commentElement) return;
+            
+            const currentText = commentElement.querySelector('p').textContent;
+
+            const newText = prompt('Edit your comment:', currentText);
+            if (newText && newText.trim() !== '' && newText !== currentText) {
+                try {
+                    await updateDoc(doc(db, 'threads', threadId, 'comments', commentId), {
+                        content: newText.trim(),
+                        editedAt: serverTimestamp()
+                    });
+                    alert('Comment updated successfully!');
+                } catch (error) {
+                    console.error('Error updating comment:', error);
+                    alert('Failed to update comment. Please try again.');
+                }
+            }
+        }
+
+        // Delete comment function
+        async function deleteComment(threadId, commentId) {
+            if (confirm('Are you sure you want to delete this comment? This action cannot be undone.')) {
+                try {
+                    await deleteDoc(doc(db, 'threads', threadId, 'comments', commentId));
+                    
+                    const threadRef = doc(db, 'threads', threadId);
+                    await updateDoc(threadRef, {
+                        replyCount: increment(-1)
+                    });
+
+                    alert('Comment deleted successfully!');
+                } catch (error) {
+                    console.error('Error deleting comment:', error);
+                    alert('Failed to delete comment. Please try again.');
+                }
+            }
+        }
+
+        // Setup comment form
+        function setupCommentForm(threadId) {
+            const form = document.getElementById('commentForm');
+            form.onsubmit = async (e) => {
+                e.preventDefault();
+
+                const user = auth.currentUser;
+                if (!user) {
+                    alert('Please log in to comment');
+                    document.getElementById('threadDetailModal').style.display = 'none';
+                    showAuthModal();
+                    return;
+                }
+
+                const content = document.getElementById('commentContent').value.trim();
+                if (!content) {
+                    alert('Please enter a comment');
+                    return;
+                }
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                let originalText;
+                if (submitBtn) {
+                    originalText = submitBtn.textContent;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Posting...';
+                }
+
+                try {
+                    if (!auth.currentUser) {
+                        throw new Error('Authentication expired. Please log in again.');
+                    }
+
+                    await addDoc(collection(db, 'threads', threadId, 'comments'), {
+                        content: content,
+                        authorId: user.uid,
+                        authorName: user.displayName || user.email || 'Anonymous',
+                        authorEmail: user.email,
+                        createdAt: serverTimestamp(),
+                        likes: 0,
+                        likedBy: []
+                    });
+
+                    const threadRef = doc(db, 'threads', threadId);
+                    await updateDoc(threadRef, {
+                        replyCount: increment(1),
+                        updatedAt: serverTimestamp()
+                    });
+
+                    document.getElementById('commentContent').value = '';
+
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                } catch (error) {
+                    console.error('Error posting comment:', error);
+                    let errorMessage = 'Failed to post comment.\n\n';
+
+                    if (error.code === 'permission-denied') {
+                        errorMessage = 'Permission Denied: You may need to update your Firebase Firestore security rules.';
+                    } else if (error.code === 'unauthenticated') {
+                        errorMessage = 'You must be logged in to post comments.\n\nPlease log in and try again.';
+                    } else {
+                        errorMessage += error.message || 'Unknown error occurred.';
+                    }
+                    alert(errorMessage);
+
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                }
+            };
+        }
+        // Close thread detail modal
+        document.getElementById('closeThreadDetailModal')?.addEventListener('click', () => {
+            document.getElementById('threadDetailModal').style.display = 'none';
+        });
+
+        // Update trending section with top threads by replies
+        function updateTrendingSection(allThreads) {
+            const trendingContent = document.getElementById('trendingContent');
+            if (!trendingContent) return;
+
+            const trendingThreads = [...allThreads]
+                .filter(t => (t.data.replyCount || 0) > 0)
+                .sort((a, b) => (b.data.replyCount || 0) - (a.data.replyCount || 0))
+                .slice(0, 5);
+
+            if (trendingThreads.length === 0) {
+                trendingContent.innerHTML = `
+                    <div class="empty-state" style="padding: 40px 20px;">
+                        <div style="font-size: 48px;">🔥</div>
+                        <div style="color: var(--color-text-secondary);">No trending topics yet</div>
+                    </div>
+                `;
+                return;
+            }
+
+            trendingContent.innerHTML = trendingThreads.map((thread, index) => `
+                <div style="padding: var(--space-12); border-bottom: 1px solid var(--color-border); cursor: pointer; transition: background 0.2s;"
+                     onmouseover="this.style.background='rgba(var(--color-brown-600-rgb), 0.05)'"
+                     onmouseout="this.style.background='transparent'"
+                     onclick="handleTrendingClick(${JSON.stringify(thread.data).replace(/"/g, '&quot;')}, '${thread.id}')">
+                    <div style="display: flex; align-items: start; gap: var(--space-8);">
+                        <span style="font-size: var(--font-size-lg); font-weight: 600; color: var(--color-primary);">${index + 1}</span>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="font-size: var(--font-size-sm); font-weight: 500; color: var(--color-text); margin-bottom: var(--space-4); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                ${escapeHtml(thread.data.title)}
+                            </div>
+                            <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                                💬 ${thread.data.replyCount || 0} replies
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Handler for clicking trending item
+        function handleTrendingClick(threadData, threadId) {
+            // Re-hydrate dates, as JSON.stringify kills them
+            if (threadData.createdAt) {
+                threadData.createdAt = { toDate: () => new Date(threadData.createdAt.seconds * 1000) };
+            }
+            if (threadData.updatedAt) {
+                threadData.updatedAt = { toDate: () => new Date(threadData.updatedAt.seconds * 1000) };
+            }
+            openThreadDetails(threadData, threadId);
+        }
+
+        // Make functions globally available for inline HTML onClicks
+        window.showAuthModal = showAuthModal;
+        window.closeAuthModal = closeAuthModal;
+        window.showNewThreadModal = showNewThreadModal;
+        window.closeNewThreadModal = closeNewThreadModal;
+        window.incrementViewCount = incrementViewCount;
+        window.openThreadDetails = openThreadDetails;
+        window.handleTrendingClick = handleTrendingClick;
+        // *** NEW: Make edit/delete functions global ***
+        window.showEditThreadModal = showEditThreadModal;
+        window.closeEditThreadModal = closeEditThreadModal;
+        window.updateThread = updateThread;
+        window.deleteThread = deleteThread;
+    
+        // Quick Actions dropdown toggle functionality
+        (function() {
+            const quickActionsBtn = document.getElementById('quickActionsBtn');
+            const quickActionsDropdown = document.getElementById('quickActionsDropdown');
+
+            if (quickActionsBtn && quickActionsDropdown) {
+                quickActionsBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isVisible = quickActionsDropdown.style.display === 'block';
+                    quickActionsDropdown.style.display = isVisible ? 'none' : 'block';
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!quickActionsBtn.contains(e.target) && !quickActionsDropdown.contains(e.target)) {
+                        quickActionsDropdown.style.display = 'none';
+                    }
+                });
+            }
+        })();
+
+    </script>
+    
+    <script>
+    function toggleCreatePollDropdown() {
+        const d = document.getElementById('createPollDropdown');
+        d.style.display = (d.style.display === 'block') ? 'none' : 'block';
+        document.getElementById('viewPollsDropdown').style.display = 'none';
+    }
+    function closeCreatePollDropdown() {
+        document.getElementById('createPollDropdown').style.display = 'none';
+    }
+    function toggleViewPollsDropdown() {
+        const d = document.getElementById('viewPollsDropdown');
+        d.style.display = (d.style.display === 'block') ? 'none' : 'block';
+        document.getElementById('createPollDropdown').style.display = 'none';
+        loadPolls();
+    }
+    function closeViewPollsDropdown() {
+        document.getElementById('viewPollsDropdown').style.display = 'none';
+    }
+    function addPollOption() {
+        const extraDiv = document.getElementById('extraPollOptions');
+        const count = extraDiv.children.length + 3;
+        if (count > 6) return;
+        const input = document.createElement('input');
+        input.className = 'form-control';
+        input.type = 'text';
+        input.placeholder = 'Option ' + count;
+        input.required = true;
+        input.style.marginBottom = '8px';
+        input.style.width = '100%';
+        extraDiv.appendChild(input);
+    }
+    function loadPollStore() {
+        try {
+            const loaded = localStorage.getItem('pollStore');
+            if (loaded) { return JSON.parse(loaded); }
+        } catch (e) {}
+        return [];
+    }
+    function savePollStore(store) {
+        localStorage.setItem('pollStore', JSON.stringify(store));
+    }
+    let pollStore = loadPollStore();
+    function createPoll() {
+        const q = document.getElementById('pollQuestion').value.trim();
+        const o1 = document.getElementById('pollOption1').value.trim();
+        const o2 = document.getElementById('pollOption2').value.trim();
+        const extra = document.getElementById('extraPollOptions');
+        let options = [o1, o2];
+        for (let i = 0; i < extra.children.length; i++) {
+            options.push(extra.children[i].value.trim());
+        }
+        if (!q || !o1 || !o2 || options.some(x=>!x)) return;
+        pollStore.unshift({question: q, options: options, votes: Array(options.length).fill(0)});
+        savePollStore(pollStore);
+        document.getElementById('createPollForm').reset();
+        extra.innerHTML = '';
+        closeCreatePollDropdown();
+        loadPolls();
+    }
+    if (document.getElementById('createPollForm')) {
+        document.getElementById('createPollForm').onsubmit = function(e) { e.preventDefault(); createPoll(); };
+    }
+    function loadPolls() {
+        const pollsList = document.getElementById('pollsList');
+        if (!pollsList) return;
+        pollStore = loadPollStore();
+        if (pollStore.length === 0) {
+            pollsList.innerHTML = '<div style="color:var(--color-text-secondary);text-align:center;padding:10px;">No polls yet.</div>';
+            return;
+        }
+        pollsList.innerHTML = pollStore.map((poll, i) => `
+          <div style='margin-bottom:16px;'>
+            <div style='font-weight:500;'>${poll.question}</div>
+            <div style='font-size:13px;margin:8px 0;'>
+              ${poll.options.map((opt, idx) => `<span style='display:inline-block;padding:2px 7px;border-radius:6px;background:rgba(33,128,141,0.08);margin:2px;'>${opt}: <b>${poll.votes[idx]}</b></span>`).join(' ')}
+            </div>
+            <div>${poll.options.map((opt, idx) => `<button onclick='votePoll(${i},${idx})' style='font-size:12px;margin:2px;padding:2px 8px;border-radius:6px;cursor:pointer;background:var(--color-primary);color:#fff;border:none;'>Vote</button>`).join(' ')}</div>
+          </div>
+        `).join('');
+    }
+    function votePoll(pollIdx, optIdx) {
+        pollStore = loadPollStore();
+        pollStore[pollIdx].votes[optIdx]++;
+        savePollStore(pollStore);
+        loadPolls();
+    }
+    window.addEventListener('click', function(e) {
+        const cpd = document.getElementById('createPollDropdown');
+        const vpd = document.getElementById('viewPollsDropdown');
+        if (cpd && !cpd.contains(e.target) && !document.getElementById('createPollBtn').contains(e.target)) {
+            cpd.style.display = 'none';
+        }
+        if (vpd && !vpd.contains(e.target) && !document.getElementById('viewPollsBtn').contains(e.target)) {
+            vpd.style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html>
